@@ -25,7 +25,7 @@ pointer: true
 slideNumber: true
 ---
 
-## Lattice Boltzmann Method for Electromagnetic Wave Scattering and Radiation Force Computation
+## A Lattice Boltzmann Framework for Simulating Electromagnetic Scattering and Radiation Forces
 
 Mohd Meraj Khan
 
@@ -35,8 +35,8 @@ Mohd Meraj Khan
 </div>
 
 <div class="mt-5 py-1" >
-  Seminar II <br>
-  February 5, 2025
+  Thesis Submission Approval Meeting <br>
+  November 13, 2025
 </div>
 
 <div class="flex items-center justify-center mt-10">
@@ -889,6 +889,246 @@ $$
 
 ---
 
+
+## Sharp Edged Scatterer
+
+<v-drag pos="225,101,540,_">
+<div v-click.hide="1"  class="mt-3">
+  <figure class="text-center">
+    <img src="/figures/ice_crystal.png" alt="Image 1" class="w-auto h-auto">
+  </figure>
+</div>
+</v-drag>
+
+<div v-click.hide="1" class="abs-bl m-2 text-2">
+  Lamb and Verlinde (2011)
+</div>
+
+<div class="grid grid-cols-2 gap-0 items-center justify-center mt-10">
+
+  <figure v-click class="flex flex-col items-center justify-center">
+    <img src="/figures/hexagonalEzTot.png" alt="Image 1" class="w-full h-auto">
+  </figure>
+  
+  
+  <figure v-click class="flex flex-col items-center justify-center">
+    <img src="/figures/UHexagon.svg" alt="Image 3" class="w-4/5 h-auto">
+  </figure>
+  
+</div>
+
+<div class="abs-br m-2 text-3">
+  <SlideCurrentNo />
+</div>
+
+---
+
+## Multiple Scatterers
+
+
+Applications in finding effective dielectric constant of composite materials
+
+
+<div class="grid grid-cols-3 gap-1 place-items-center text-center mt-15">
+
+  <figure v-click class="text-center self-end">
+    <img src="/figures/PEC_Multi_Particles.png" alt="Image 1" class="w-full h-auto">
+    <figcaption class="text-3">
+      Perfect electric conductor
+    </figcaption>
+  </figure>
+  
+  <figure v-click class="text-center self-end">
+    <img src="/figures/er5_Multi_Particles.png" alt="Image 2" class="w-full h-auto">
+    <figcaption class="text-3">
+      Dielectric
+    </figcaption>
+  </figure>
+  
+  <figure v-click class="text-center self-end">
+    <img src="/figures/MA_energy_multi_particles.svg" alt="Image 3" class="w-full h-auto">
+    <figcaption class="text-3 mt-5">
+      Energy
+    </figcaption>
+  </figure>
+  
+</div>
+
+<div class="abs-br m-2 text-3">
+  <SlideCurrentNo />
+</div>
+
+---
+layout: two-cols-header
+---
+
+## Radiation Force on Circular Conducting Cylinder
+
+::left::
+
+<v-drag pos="76,218,355,_">
+<div class="text-3 text-left">
+$$
+\langle \mathbb{T} \rangle = \frac{1}{2} \Re \left[ \varepsilon_0  {\bf E}  {\bf E}^* + \mu_0 {\bf H}  {\bf H}^*- \frac{1}{2}  \left( \varepsilon_0 |{\bf E}|^2 + \mu_0 |{\bf H}|^2 \right) \mathbb{I} \right]
+$$
+</div>
+</v-drag>
+
+<v-drag pos="142,328,184,_">
+<div class="text-3 text-left">
+$$
+\langle {\bf F} \rangle = \oint \langle \mathbb{T} \rangle \cdot  {\bf \hat{n}} dl
+$$
+</div>
+</v-drag>
+
+::right::
+
+<div class="flex flex-col justify-center items-center w-auto mb-15">
+  <img src="/figures/Fx_PEC1.svg" alt="Image 1">
+</div>
+
+<div class="abs-bl m-2 text-2">
+  M.I. Mishchenko and L. D. Travis (2002)
+</div>
+
+<div class="abs-br m-2 text-3">
+  <SlideCurrentNo />
+</div>
+
+---
+
+## Radiation force on Dielectric Circular Cylinder
+
+<div class="grid grid-cols-3 gap-6 mt-5">
+  <figure v-click class="text-center">
+    <img src="/figures/FxDielRayleigh.svg" alt="Image 1" class="w-full h-auto">
+    <figcaption class="text-3 mt-2">
+      Rayleigh regime
+    </figcaption>
+  </figure>
+  
+  <figure v-click class="text-center">
+    <img src="/figures/FxDielMie.svg" alt="Image 2" class="w-full h-auto">
+    <figcaption class="text-3 mt-2">
+      Mie regime
+    </figcaption>
+  </figure>
+  
+  <figure v-click class="text-center">
+    <img src="/figures/FxDielGO.svg" alt="Image 3" class="w-full h-auto">
+    <figcaption class="text-3 mt-2">
+      Geometrical optics regime
+    </figcaption>
+  </figure>
+  
+</div>
+
+<div v-click class="text-3 mt-10">
+
+| $a / \lambda$ | $\varepsilon_r$ | $a / \Delta x$ | $\lambda / \Delta x$ (within scatterer) | Time (seconds) |               $\%$ Error                |
+| :-----------: | :-------------: | :------------: | :-------------------------------------: | :------------: | :-------------------------------------: |
+|      1.0      |        2        |       15       |  <span v-mark.circle.red="5">10</span>  |      0.98      | <span v-mark.circle.red="6">4.33</span> |
+|      1.0      |        4        |       20       |  <span v-mark.circle.red="5">10</span>  |      2.53      | <span v-mark.circle.red="6">3.20</span> |
+|      0.9      |        9        |       30       |  <span v-mark.circle.red="5">11</span>  |     10.41      | <span v-mark.circle.red="6">5.19</span> |
+
+</div>
+
+<div class="abs-br m-2 text-3">
+  <SlideCurrentNo />
+</div>
+
+---
+
+## Resonance Peak
+
+<div class="grid grid-cols-3 gap-6 mt-5">
+  <figure class="text-center">
+    <img src="/figures/FxMie_er4.svg" alt="Image 1" class="w-full h-auto">
+  </figure>
+  
+  <figure v-click="1" class="text-center">
+    <img src="/figures/Fx_Mie_err.svg" alt="Image 2" class="w-full h-auto">
+  </figure>
+  
+  <figure v-click="2" class="text-center">
+    <img src="/figures/Fx_Mie_peaks_0.95.svg" alt="Image 3" class="w-full h-auto">
+  </figure>
+  
+</div>
+
+<div v-click="3" class="relative w-full mt-10">
+ 
+  <div v-click="3" v-click.hide="4" class="absolute inset-0 grid grid-cols-3 gap-6 place-items-center transition-opacity duration-500 opacity-100">
+    <figure class="text-center">
+      <img src="/figures/trac91_er_4_avg.svg" alt="Image 1" class="w-full h-auto">
+    </figure>
+    <figure class="text-center">
+      <img src="/figures/trac93_er_4_avg.svg" alt="Image 2" class="w-full h-auto">
+    </figure>
+    <figure class="text-center">
+      <img src="/figures/trac95_er_4_avg.svg" alt="Image 3" class="w-full h-auto">
+    </figure>
+  </div>
+
+  <!-- Second group of images -->
+  <div v-click="4" class="absolute inset-0 grid grid-cols-2 gap-6 place-items-center transition-opacity duration-500 opacity-100">
+    <figure class="text-center">
+      <img src="/figures/MA_er_4.0.svg" alt="Image 4" class="w-full h-auto">
+    </figure>
+    <figure class="text-center">
+      <img src="/figures/energy_er_4.0.svg" alt="Image 5" class="w-full h-auto">
+    </figure>
+  </div>
+</div>
+
+<div class="abs-br m-2 text-3">
+  <SlideCurrentNo />
+</div>
+
+---
+
+## Radiation Force on Corrugated Elliptical Conducting Cylinder
+
+<div class="flex justify-center w-full">
+  <div class="w-3/4 h-auto text-center">
+    <img src="/figures/JAP/corrugatedSnap.png" alt="Image 1" class="mx-auto">
+  </div>
+</div>
+
+<div class="flex justify-center w-full mb-1">
+  <img src="/figures/JAP/corrugatedPEC.svg" alt="Image 1" class="m-auto">
+</div>
+
+<v-drag pos="693,414,105,_">
+  <div text-center text-3 border border-main rounded>
+    F.G. Mitri (2019)
+  </div>
+</v-drag>
+
+<v-drag pos="13,333,288,_">
+<div class="text-3 text-left">
+$$
+r = a \left[ \frac{1}{\sqrt{\left( \cos{\phi} \right)^2 + \left(A \sin{\phi} \right)^2}} + d \cos{(N \phi)} \right]
+$$
+</div>
+</v-drag>
+
+<v-drag pos="103,439,76,_">
+<div class="text-3 text-left">
+$$
+A = \frac{a}{b}
+$$
+</div>
+</v-drag>
+
+<div class="abs-br m-2 text-3">
+  <SlideCurrentNo />
+</div>
+
+---
+
+
 ## Normal Incidence Plane Wave Scattering by Circular Cylinder
 
 Considering size
@@ -1276,309 +1516,231 @@ $$
 </div>
 
 ---
-layout: two-cols-header
-layoutClass: gap-10
+
+
+## Scattering from a regular hexagonal dielectric cylinder
+
+
+<div class="relative w-full mt-10">
+
+
+
+<div v-click="1" v-click.hide="3"  class="absolute inset-0 items-center justify-center">
+  <div v-click="1"  class="grid grid-cols-3 gap-2 place-items-center justify-center transition-opacity duration-500 opacity-100">
+    <figure class="flex flex-col items-center">
+      <img src="/figures/SW_TM_Hexgon_polar_er_1.721_ratio_0.1.svg" alt="Image 1" class="w-full h-auto">
+    </figure>
+    <figure class="flex flex-col items-center">
+      <img src="/figures/SW_TM_Hexgon_polar_er_1.721_ratio_1.svg" alt="Image 2" class="w-full h-auto">
+    </figure>
+    <figure class="flex flex-col items-center">
+      <img src="/figures/SW_TM_Hexgon_polar_er_1.721_ratio_10.svg" alt="Image 3" class="w-full h-auto">
+    </figure>
+  </div>
+  <div v-click="2"  class="grid grid-cols-3 gap-2 place-items-center justify-center transition-opacity duration-500 opacity-100">
+      <figure class="flex flex-col items-center">
+        <img src="/figures/SW_TE_Hexgon_polar_er_1.721_ratio_0.1.svg" alt="Image 4" class="w-full h-auto">
+      </figure>
+      <figure class="flex flex-col items-center">
+        <img src="/figures/SW_TE_Hexgon_polar_er_1.721_ratio_1.svg" alt="Image 5" class="w-full h-auto">
+      </figure>
+      <figure class="flex flex-col items-center">
+        <img src="/figures/SW_TE_Hexgon_polar_er_1.721_ratio_10.svg" alt="Image 5" class="w-full h-auto">
+      </figure>
+  </div>
+  
+</div>
+
+
+
+
+
+<div v-click="3"
+       class="absolute inset-0 grid grid-cols-3 gap-2 mt-15 place-items-center justify-center transition-opacity duration-500 opacity-100">
+    <figure class="flex flex-col items-center">
+      <img src="/figures/Ez_Hexagon_TM_Tot_er_1.721_Real_0.1.svg" alt="Final 1" class="w-full h-auto">
+    </figure>
+    <figure class="flex flex-col items-center">
+      <img src="/figures/Ez_Hexagon_TM_Tot_er_1.721_Real_1.svg" alt="Final 2" class="w-full h-auto">
+    </figure>
+    <figure class="flex flex-col items-center">
+      <img src="/figures/Ez_Hexagon_TM_Tot_er_1.721_Real_10.svg" alt="Final 3" class="w-full h-auto">
+    </figure>
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<div class="abs-br m-2 text-3">
+  <SlideCurrentNo />
+</div>
+
 ---
 
-## Plane Wave Scattering by Dielectric Sphere
 
-::left::
 
-<figure class="text-center mt-5">
-    <img src="/figures/sphere.png" alt="Image 1" class="w-auto h-auto">
+## Scattering from a dielectric sphere
+
+
+<div class="relative flex flex-col items-center justify-center mt-10">
+
+<figure v-click="1"  v-click.hide="2" class="flex flex-col items-center">
+  <img src="/figures/3D_schematic.png" alt="Main Figure" class="w-1/2 h-auto">
 </figure>
 
-::right::
-
-<div class="relative w-full mt-0">
-
-<div v-click.hide="3" class="absolute mt-5 place-items-center transition-opacity duration-100 opacity-100">
-
-<div v-click="1" class="mt-1 text-3">
-Scattered electric fields
-$$
-\begin{aligned}
-E_r^S &= -i E_0 \cos{\phi} \sum_{n = 1}^{+ \infty} b_n \left[ \hat{H}_n^{(2)''}(k_1 r) + \hat{H}_n^{(2)}(k_1 r) \right] P_n^1 (\cos{\theta}) \\[1.0em]
-E_{\theta}^S &= \frac{E_0}{k_1 r} \cos{\phi} \sum_{n = 1}^{+ \infty} \left[ i b_n \hat{H}_n^{(2)'}(k_1 r) \sin{\theta} P'{_n}^1 (\cos{\theta}) - c_n \hat{H}_n^{(2)}(k_1 r) \frac{P_n^1 (\cos{\theta})}{\sin{\theta}} \right]  \\[1.0em]
-E_{\phi}^S &= \frac{E_0}{k_1 r} \sin{\phi} \sum_{n = 1}^{+ \infty} \left[ i b_n \hat{H}_n^{(2)'}(k_1 r) \frac{P_n^1 (\cos{\theta})}{\sin{\theta}} - c_n \hat{H}_n^{(2)}(k_1 r) \sin{\theta} P'{_n}^1 (\cos{\theta}) \right]  \\[1.0em]
-\end{aligned}
-$$
-</div>
-
-<div v-click="2" class="mt-1 text-3">
-Constants
-$$
-\begin{aligned}
-b_n &=  \frac{- \sqrt{\varepsilon_r} \hat{J}_n^{'}(k_0 a) \hat{J}_n(k_1 a) + \sqrt{\mu_r} \hat{J}_n(k_0 a) \hat{J}_n^{'} (k_1 a)}{\sqrt{\varepsilon_r} 
-\hat{H}_n^{(2')}(k_0 a) \hat{J}_n (k_1 a) - \sqrt{\mu_r} \hat{H}_n^{(2)} (k_0 a) \hat{J}_n^{'}(k_1 a)} \\[1.0em]
-c_n &=  \frac{- \sqrt{\varepsilon_r} \hat{J}_n(k_0 a) \hat{J}_n^{'}(k_1 a) + \sqrt{\mu_r} \hat{J}_n^{'}(k_0 a) \hat{J}_n (k_1 a)}{\sqrt{\varepsilon_r} 
-\hat{H}_n^{(2)}(k_0 a) \hat{J}_n^{'} (k_1 a) - \sqrt{\mu_r} \hat{H}_n^{(2')} (k_0 a) \hat{J}_n(k_1 a)} \\[1.0em]
-\end{aligned}
-$$
-</div>
-
-</div>
-
-<figure v-click="3" class="absolute flex flex-col text-center item-center mt-35">
-    <img src="/figures/RCS_PEC_sphere.svg" alt="Image 1" class="w-auto h-auto">
-</figure>
-
-</div>
-
-<v-drag v-click="3" pos="591,109,186,_">
-<div  class="text-4 text-left">
-$$
-\sigma = \lim_{r \to \infty} 4 \pi r^2 \frac{| \vec{E}^S|^2}{| \vec{E}^I|^2}
-$$
-</div>
-</v-drag>
-
-<v-drag v-click="3" pos="493,455,72,_">
-<div class="text-4 text-left">
-$$
-r/a = 5
-$$
-</div>
-</v-drag>
-
-<div class="abs-bl m-2 text-2">
-  C.A. Balanis (2012)
-</div>
-
-<div class="abs-br m-2 text-3">
-  <SlideCurrentNo />
-</div>
-
----
-
-## Sharp Edged Scatterer
-
-<v-drag pos="225,101,540,_">
-<div v-click.hide="1"  class="mt-3">
-  <figure class="text-center">
-    <img src="/figures/ice_crystal.png" alt="Image 1" class="w-auto h-auto">
-  </figure>
-</div>
-</v-drag>
-
-<div v-click.hide="1" class="abs-bl m-2 text-2">
-  Lamb and Verlinde (2011)
-</div>
-
-<div class="grid grid-cols-2 gap-0 items-center justify-center mt-10">
-
-  <figure v-click class="flex flex-col items-center justify-center">
-    <img src="/figures/hexagonalEzTot.png" alt="Image 1" class="w-full h-auto">
-  </figure>
-  
-  
-  <figure v-click class="flex flex-col items-center justify-center">
-    <img src="/figures/UHexagon.svg" alt="Image 3" class="w-4/5 h-auto">
-  </figure>
-  
-</div>
-
-<div class="abs-br m-2 text-3">
-  <SlideCurrentNo />
-</div>
-
----
-
-## Multiple Scatterers
-
-
-Applications in finding effective dielectric constant of composite materials
-
-
-<div class="grid grid-cols-3 gap-1 place-items-center text-center mt-15">
-
-  <figure v-click class="text-center self-end">
-    <img src="/figures/PEC_Multi_Particles.png" alt="Image 1" class="w-full h-auto">
-    <figcaption class="text-3">
-      Perfect electric conductor
-    </figcaption>
-  </figure>
-  
-  <figure v-click class="text-center self-end">
-    <img src="/figures/er5_Multi_Particles.png" alt="Image 2" class="w-full h-auto">
-    <figcaption class="text-3">
-      Dielectric
-    </figcaption>
-  </figure>
-  
-  <figure v-click class="text-center self-end">
-    <img src="/figures/MA_energy_multi_particles.svg" alt="Image 3" class="w-full h-auto">
-    <figcaption class="text-3 mt-5">
-      Energy
-    </figcaption>
-  </figure>
-  
-</div>
-
-<div class="abs-br m-2 text-3">
-  <SlideCurrentNo />
-</div>
-
----
-layout: two-cols-header
----
-
-## Radiation Force on Circular Conducting Cylinder
-
-::left::
-
-<v-drag pos="76,218,355,_">
-<div class="text-3 text-left">
-$$
-\langle \mathbb{T} \rangle = \frac{1}{2} \Re \left[ \varepsilon_0  {\bf E}  {\bf E}^* + \mu_0 {\bf H}  {\bf H}^*- \frac{1}{2}  \left( \varepsilon_0 |{\bf E}|^2 + \mu_0 |{\bf H}|^2 \right) \mathbb{I} \right]
-$$
-</div>
-</v-drag>
-
-<v-drag pos="142,328,184,_">
-<div class="text-3 text-left">
-$$
-\langle {\bf F} \rangle = \oint \langle \mathbb{T} \rangle \cdot  {\bf \hat{n}} dl
-$$
-</div>
-</v-drag>
-
-::right::
-
-<div class="flex flex-col justify-center items-center w-auto mb-15">
-  <img src="/figures/Fx_PEC1.svg" alt="Image 1">
-</div>
-
-<div class="abs-bl m-2 text-2">
-  M.I. Mishchenko and L. D. Travis (2002)
-</div>
-
-<div class="abs-br m-2 text-3">
-  <SlideCurrentNo />
-</div>
-
----
-
-## Radiation force on Dielectric Circular Cylinder
-
-<div class="grid grid-cols-3 gap-6 mt-5">
-  <figure v-click class="text-center">
-    <img src="/figures/FxDielRayleigh.svg" alt="Image 1" class="w-full h-auto">
-    <figcaption class="text-3 mt-2">
-      Rayleigh regime
-    </figcaption>
-  </figure>
-  
-  <figure v-click class="text-center">
-    <img src="/figures/FxDielMie.svg" alt="Image 2" class="w-full h-auto">
-    <figcaption class="text-3 mt-2">
-      Mie regime
-    </figcaption>
-  </figure>
-  
-  <figure v-click class="text-center">
-    <img src="/figures/FxDielGO.svg" alt="Image 3" class="w-full h-auto">
-    <figcaption class="text-3 mt-2">
-      Geometrical optics regime
-    </figcaption>
-  </figure>
-  
-</div>
-
-<div v-click class="text-3 mt-10">
-
-| $a / \lambda$ | $\varepsilon_r$ | $a / \Delta x$ | $\lambda / \Delta x$ (within scatterer) | Time (seconds) |               $\%$ Error                |
-| :-----------: | :-------------: | :------------: | :-------------------------------------: | :------------: | :-------------------------------------: |
-|      1.0      |        2        |       15       |  <span v-mark.circle.red="5">10</span>  |      0.98      | <span v-mark.circle.red="6">4.33</span> |
-|      1.0      |        4        |       20       |  <span v-mark.circle.red="5">10</span>  |      2.53      | <span v-mark.circle.red="6">3.20</span> |
-|      0.9      |        9        |       30       |  <span v-mark.circle.red="5">11</span>  |     10.41      | <span v-mark.circle.red="6">5.19</span> |
-
-</div>
-
-<div class="abs-br m-2 text-3">
-  <SlideCurrentNo />
-</div>
-
----
-
-## Resonance Peak
-
-<div class="grid grid-cols-3 gap-6 mt-5">
-  <figure class="text-center">
-    <img src="/figures/FxMie_er4.svg" alt="Image 1" class="w-full h-auto">
-  </figure>
-  
-  <figure v-click="1" class="text-center">
-    <img src="/figures/Fx_Mie_err.svg" alt="Image 2" class="w-full h-auto">
-  </figure>
-  
-  <figure v-click="2" class="text-center">
-    <img src="/figures/Fx_Mie_peaks_0.95.svg" alt="Image 3" class="w-full h-auto">
-  </figure>
-  
-</div>
-
-<div v-click="3" class="relative w-full mt-10">
- 
-  <div v-click="3" v-click.hide="4" class="absolute inset-0 grid grid-cols-3 gap-6 place-items-center transition-opacity duration-500 opacity-100">
-    <figure class="text-center">
-      <img src="/figures/trac91_er_4_avg.svg" alt="Image 1" class="w-full h-auto">
+<div v-click="2" class="absolute inset-0 flex flex-col items-center justify-center">
+  <div class="grid grid-cols-3 gap-10 place-items-center justify-center transition-opacity duration-500 opacity-100">
+    <figure class="flex flex-col items-center">
+      <img src="/figures/RCS_Polar_0.02_2_90.svg" alt="Image 1" class="w-full h-auto">
     </figure>
-    <figure class="text-center">
-      <img src="/figures/trac93_er_4_avg.svg" alt="Image 2" class="w-full h-auto">
+    <figure class="flex flex-col items-center">
+      <img src="/figures/RCS_Polar_0.1_2_90.svg" alt="Image 2" class="w-full h-auto">
     </figure>
-    <figure class="text-center">
-      <img src="/figures/trac95_er_4_avg.svg" alt="Image 3" class="w-full h-auto">
+    <figure class="flex flex-col items-center">
+      <img src="/figures/RCS_Polar_1_2_90.svg" alt="Image 3" class="w-full h-auto">
     </figure>
-  </div>
-
-  <!-- Second group of images -->
-  <div v-click="4" class="absolute inset-0 grid grid-cols-2 gap-6 place-items-center transition-opacity duration-500 opacity-100">
-    <figure class="text-center">
-      <img src="/figures/MA_er_4.0.svg" alt="Image 4" class="w-full h-auto">
-    </figure>
-    <figure class="text-center">
-      <img src="/figures/energy_er_4.0.svg" alt="Image 5" class="w-full h-auto">
-    </figure>
+    <div class="col-span-3 flex justify-center gap-10 transition-opacity duration-500 opacity-100">
+      <figure class="flex flex-col items-center">
+        <img src="/figures/RCS_Polar_2_2_90.svg" alt="Image 4" class="w-full h-auto">
+      </figure>
+      <figure class="flex flex-col items-center">
+        <img src="/figures/RCS_Polar_5_2_90.svg" alt="Image 5" class="w-full h-auto">
+      </figure>
+    </div>
   </div>
 </div>
 
+</div>
+
+
+
+
+<v-drag pos="905,77,55,_">
+<div v-click="1"  class="text-3 text-left">
+$$
+a / \lambda = 1
+$$
+</div>
+</v-drag>
+
+<v-drag pos="73,196,55,_">
+<div v-click="1"  class="text-3 text-left">
+$$
+\varepsilon_r = 2
+$$
+</div>
+</v-drag>
+
+<v-drag pos="513,193,55,_">
+<div v-click="1"  class="text-3 text-left">
+$$
+\varepsilon_r = 5
+$$
+</div>
+</v-drag>
+
+<v-drag pos="69,406,55,_">
+<div v-click="1"  class="text-3 text-left">
+$$
+\varepsilon_r = 10
+$$
+</div>
+</v-drag>
+
+<v-drag pos="509,408,55,_">
+<div v-click="1"  class="text-3 text-left">
+$$
+\varepsilon_r = 20
+$$
+</div>
+</v-drag>
+
+<v-drag pos="652,76,228,_">
+<div v-click="1"  class="text-3 text-left">
+$$
+\lambda_{\varepsilon_r} = 50 \times \Delta x, \hspace{10pt} L/a = 10
+$$
+</div>
+</v-drag>
+
 <div class="abs-br m-2 text-3">
   <SlideCurrentNo />
 </div>
 
 ---
 
-## Radiation Force on Corrugated Elliptical Conducting Cylinder
+## Scattering from a dielectric sphere
 
-<div class="flex justify-center w-full">
-  <div class="w-3/4 h-auto text-center">
-    <img src="/figures/JAP/corrugatedSnap.png" alt="Image 1" class="mx-auto">
-  </div>
+
+
+<div v-click="1" class="grid grid-cols-2 gap-5 place-items-center justify-center mt-10 my-15">
+  <figure class="flex flex-col items-center">
+    <img src="/figures/sphere_er_2_ratio_0.02.svg" alt="Image 1" class="w-full h-auto">
+  </figure>
+
+  <figure class="flex flex-col items-center">
+    <img src="/figures/sphere_er_2_ratio_0.1.svg" alt="Image 2" class="w-full h-auto">
+  </figure>
+
+  <figure class="flex flex-col items-center">
+    <img src="/figures/sphere_er_2_ratio_1.svg" alt="Image 3" class="w-full h-auto">
+  </figure>
+
+  <figure class="flex flex-col items-center">
+    <img src="/figures/sphere_er_2_ratio_5.svg" alt="Image 4" class="w-full h-auto">
+  </figure>
 </div>
 
-<div class="flex justify-center w-full mb-1">
-  <img src="/figures/JAP/corrugatedPEC.svg" alt="Image 1" class="m-auto">
+<v-drag pos="905,77,55,_">
+<div v-click="1"  class="text-3 text-left">
+$$
+a / \lambda = 1
+$$
 </div>
-
-<v-drag pos="693,414,105,_">
-  <div text-center text-3 border border-main rounded>
-    F.G. Mitri (2019)
-  </div>
 </v-drag>
 
-<v-drag pos="13,333,288,_">
-<div class="text-3 text-left">
+<v-drag pos="73,196,55,_">
+<div v-click="1"  class="text-3 text-left">
 $$
-r = a \left[ \frac{1}{\sqrt{\left( \cos{\phi} \right)^2 + \left(A \sin{\phi} \right)^2}} + d \cos{(N \phi)} \right]
+\varepsilon_r = 2
 $$
 </div>
 </v-drag>
 
-<v-drag pos="103,439,76,_">
-<div class="text-3 text-left">
+<v-drag pos="513,193,55,_">
+<div v-click="1"  class="text-3 text-left">
 $$
-A = \frac{a}{b}
+\varepsilon_r = 5
+$$
+</div>
+</v-drag>
+
+<v-drag pos="69,406,55,_">
+<div v-click="1"  class="text-3 text-left">
+$$
+\varepsilon_r = 10
+$$
+</div>
+</v-drag>
+
+<v-drag pos="509,408,55,_">
+<div v-click="1"  class="text-3 text-left">
+$$
+\varepsilon_r = 20
+$$
+</div>
+</v-drag>
+
+<v-drag pos="652,76,228,_">
+<div v-click="1"  class="text-3 text-left">
+$$
+\lambda_{\varepsilon_r} = 50 \times \Delta x, \hspace{10pt} L/a = 10
 $$
 </div>
 </v-drag>
@@ -1598,44 +1760,45 @@ Scattering width
 ::left::
 
 <figure class="text-center item-center my-5">
-  <img src="/figures/Janus/JanusHalf_schematic.png" alt="Image 1" class="w-3/4 h-auto">
+  <img src="/figures/Janus_Half_schematic.svg" alt="Image 1" class="w-3/4 h-auto">
 </figure>
 
 ::right::
 
-<v-drag pos="526,126,55,_">
+
+
+<v-drag pos="439,110,471,_">
+<div v-click="1" class="mt-3 text-3.5">
+$$
+E_z^I (r, \phi) = \sum_{m = 0}^{\infty} \alpha_m (-j)^m J_m (k_0 r) \cos{ { m ( \phi - \phi_0) } }
+$$
+</div>
+</v-drag>
+
+
+
+<v-drag pos="446,238,500,_">
+<div v-click="1" class="mt-3 text-3.5">
+$$
+E_z^S (r, \phi) = \sum_{m = 0}^{\infty} \left[ B_m \cos{(m \phi)} + D_m \sin{(m \phi)} \right] H_m^{(1)} (k_0 r)
+$$
+</div>
+</v-drag>
+
+
+<v-drag pos="567,177,219,_">
 <div v-click="1"  class="text-3 text-left">
 $$
-\varepsilon_{r_1} = 1
+\alpha_m =
+\begin{cases}
+0, & \text{if } m = 1, \\
+0, & \text{otherwise.}
+\end{cases}
 $$
 </div>
 </v-drag>
 
-<v-drag pos="426,173,225,_">
-<div v-click="1" class="mt-3">
-  <figure class="text-center">
-    <img src="/figures/Janus/RCS_1.svg" alt="Image 1" class="w-auto h-auto">
-  </figure>
-</div>
-</v-drag>
-
-<v-drag pos="822,129,55,_">
-<div v-click="1"  class="text-3 text-left">
-$$
-\varepsilon_{r_1} = 2
-$$
-</div>
-</v-drag>
-
-<v-drag pos="717,175,225,_">
-<div v-click="1" class="mt-3">
-  <figure class="text-center">
-    <img src="/figures/Janus/RCS_2.svg" alt="Image 1" class="w-auto h-auto">
-  </figure>
-</div>
-</v-drag>
-
-<v-drag pos="515,386,55,_">
+<v-drag pos="526,398,55,_">
 <div v-click="1"  class="text-3 text-left">
 $$
 \varepsilon_{r_1} = 5
@@ -1651,7 +1814,7 @@ $$
 </div>
 </v-drag>
 
-<v-drag pos="593,341,224,_">
+<v-drag pos="593,341,227,_">
 <div v-click="1" class="mt-3">
   <figure class="text-center">
     <img src="/figures/Janus/RCS_5.svg" alt="Image 1" class="w-auto h-auto">
@@ -1665,6 +1828,15 @@ $$
   </div>
 </v-drag>
 
+
+<v-drag pos="684,492,157,_">
+<div v-click="1"  class="text-3 text-left">
+$$
+\theta = \text{scattering angle}
+$$
+</div>
+</v-drag>
+
 <div class="abs-br m-2 text-3">
   <SlideCurrentNo />
 </div>
@@ -1673,50 +1845,54 @@ $$
 
 ## Radiation Force and Torque
 
+<!--
 <div v-click="1" class="text-center">
 Analytical solution (Hurd and Sachdeva 1975)
 </div>
+-->
 
-<div v-click="1" class="grid grid-cols-3 gap-0 mt-3">
+<div v-click="1" class="grid grid-cols-3 gap-0 mt-0">
   <figure class="text-center">
-    <img src="/figures/Janus/Fx_Exact_Hurd.svg" alt="Image 1" class="w-full h-auto">
+    <img src="/figures/Fx_LBM_Hurd.svg" alt="Image 1" class="w-full h-auto">
   </figure>
   
   <figure class="text-center">
-    <img src="/figures/Janus/Fy_Exact_Hurd.svg" alt="Image 2" class="w-full h-auto">
+    <img src="/figures/Fy_LBM_Hurd.svg" alt="Image 2" class="w-full h-auto">
   </figure>
   
   <figure class="text-center">
-    <img src="/figures/Janus/Tz_Exact_Hurd.svg" alt="Image 3" class="w-full h-auto">
+    <img src="/figures/Tz_LBM_Hurd.svg" alt="Image 3" class="w-full h-auto">
   </figure>
 </div>
 
-<div v-click="2" class="text-center mt-5">
+<!--
+<div v-click="2" class="text-center mt-0">
 LBM solutions
 </div>
+-->
 
-<div v-click="2" class="grid grid-cols-3 gap-0 mt-3">
+<div v-click="2" class="grid grid-cols-3 gap-0 mt-0">
   <figure class="text-center">
-    <img src="/figures/Janus/Fx_LBM_Hurd.svg" alt="Image 1" class="w-full h-auto">
+    <img src="/figures/Fx_Hurd_Per_Err.svg" alt="Image 1" class="w-full h-auto">
   </figure>
   
   <figure class="text-center">
-    <img src="/figures/Janus/Fy_LBM_Hurd.svg" alt="Image 2" class="w-full h-auto">
+    <img src="/figures/Fy_Hurd_Per_Err.svg" alt="Image 2" class="w-full h-auto">
   </figure>
   
   <figure class="text-center">
-    <img src="/figures/Janus/Tz_LBM_Hurd.svg" alt="Image 3" class="w-full h-auto">
+    <img src="/figures/Tz_Hurd_Per_Err.svg" alt="Image 3" class="w-full h-auto">
   </figure>
   
 </div>
 
-<v-drag pos="820,17,94,_">
+<v-drag pos="869,14,94,_">
 <figure class="text-center">
-  <img src="/figures/Janus/janus.png" alt="Image 2" class="w-full h-auto">
+  <img src="/figures/Janus/janus.png" alt="Image 2" class="w-3/4 h-auto">
 </figure>
 </v-drag>
 
-<v-drag pos="624,24,169,_">
+<v-drag pos="595,-2,169,_">
 <div v-click="2"  class="text-3 text-left">
 $$
 a = 40 \times \Delta x,  \hspace{10pt} L/a = 4
@@ -1726,7 +1902,7 @@ $$
 
 
 
-<v-drag pos="140,286,53,_">
+<v-drag pos="46,238,53,_">
 <div v-click="1"  class="text-3 text-left">
 $$
 \langle \vec{F}_x \rangle
@@ -1734,7 +1910,7 @@ $$
 </div>
 </v-drag>
 
-<v-drag pos="376,274,53,_">
+<v-drag pos="482,42,53,_">
 <div v-click="1"  class="text-3 text-left">
 $$
 \langle \vec{F}_y \rangle
@@ -1742,7 +1918,7 @@ $$
 </div>
 </v-drag>
 
-<v-drag pos="757,289,53,_">
+<v-drag pos="779,38,53,_">
 <div v-click="1"  class="text-3 text-left">
 $$
 \langle \vec{T}_z \rangle
@@ -1762,45 +1938,48 @@ $$
 
 <div v-click="1" class="grid grid-cols-3 gap-2 mt-3 ml-10">
   <figure class="text-center">
-    <img src="/figures/Janus/Fx_Janus_er_1.svg" alt="Image 1" class="w-full h-auto">
+    <img src="/figures/Fx_Janus_er_1.svg" alt="Image 1" class="w-full h-auto">
   </figure>
   
   <figure class="text-center">
-    <img src="/figures/Janus/Fy_Janus_er_1.svg" alt="Image 2" class="w-full h-auto">
+    <img src="/figures/Fy_Janus_er_1.svg" alt="Image 2" class="w-full h-auto">
   </figure>
   
   <figure class="text-center">
-    <img src="/figures/Janus/Tz_Janus_er_1.svg" alt="Image 3" class="w-full h-auto">
+    <img src="/figures/Tz_Janus_er_1.svg" alt="Image 3" class="w-full h-auto">
   </figure>
 </div>
 
 <div v-click="2" class="grid grid-cols-3 gap-2 mt-3 ml-10">
   <figure class="text-center">
-    <img src="/figures/Janus/Fx_Janus_er_2.svg" alt="Image 1" class="w-full h-auto">
+    <img src="/figures/Fx_Janus_er_2.svg" alt="Image 1" class="w-full h-auto">
   </figure>
   
   <figure class="text-center">
-    <img src="/figures/Janus/Fy_Janus_er_2.svg" alt="Image 2" class="w-full h-auto">
+    <img src="/figures/Fy_Janus_er_2.svg" alt="Image 2" class="w-full h-auto">
   </figure>
   
   <figure class="text-center">
-    <img src="/figures/Janus/Tz_Janus_er_2.svg" alt="Image 3" class="w-full h-auto">
+    <img src="/figures/Tz_Janus_er_2.svg" alt="Image 3" class="w-full h-auto">
   </figure>
 </div>
 
+
+<!--
 <div v-click="3" class="grid grid-cols-3 gap-2 mt-3 ml-10">
   <figure class="text-center">
-    <img src="/figures/Janus/Fx_Janus_er_5.svg" alt="Image 1" class="w-full h-auto">
+    <img src="/figures/Fx_Janus_er_5.svg" alt="Image 1" class="w-full h-auto">
   </figure>
   
   <figure class="text-center">
-    <img src="/figures/Janus/Fy_Janus_er_5.svg" alt="Image 2" class="w-full h-auto">
+    <img src="/figures/Fy_Janus_er_5.svg" alt="Image 2" class="w-full h-auto">
   </figure>
   
   <figure class="text-center">
-    <img src="/figures/Janus/Tz_Janus_er_5.svg" alt="Image 3" class="w-full h-auto">
+    <img src="/figures/Tz_Janus_er_5.svg" alt="Image 3" class="w-full h-auto">
   </figure>
 </div>
+-->
 
 <v-drag pos="197,54,53,_">
 <div v-click="1"  class="text-3 text-left">
@@ -1826,7 +2005,7 @@ $$
 </div>
 </v-drag>
 
-<v-drag pos="19,114,60,_">
+<v-drag pos="21,143,60,_">
 <div v-click="1"  class="text-3 text-left">
 $$
 \varepsilon_{r_1} = 1
@@ -1834,7 +2013,7 @@ $$
 </div>
 </v-drag>
 
-<v-drag pos="22,266,53,_">
+<v-drag pos="22,378,53,_">
 <div v-click="2"  class="text-3 text-left">
 $$
 \varepsilon_{r_1} = 2
@@ -1842,13 +2021,7 @@ $$
 </div>
 </v-drag>
 
-<v-drag pos="19,422,53,_">
-<div v-click="3"  class="text-3 text-left">
-$$
-\varepsilon_{r_1} = 5
-$$
-</div>
-</v-drag>
+
 
 <v-drag pos="850,0,94,_">
 <figure class="text-center">
@@ -1870,6 +2043,103 @@ $$
 4 Parallel threads, 35 secs / simulation 18281 simulations,  1 week
 </div>
 </v-drag>
+
+<div class="abs-br m-2 text-3">
+  <SlideCurrentNo />
+</div>
+
+---
+
+## Radiation Force and Torque
+
+<div v-click="1" class="grid grid-cols-3 gap-2 mt-5 ml-15">
+  <figure class="text-center">
+    <img src="/figures/MDJC_Trajectory_er_1.svg" alt="Image 1" class="w-full h-auto">
+  </figure>
+  
+  <figure class="text-center">
+    <img src="/figures/MDJC_Trajectory_er_3.svg" alt="Image 2" class="w-full h-auto">
+  </figure>
+  
+  <figure class="text-center">
+    <img src="/figures/MDJC_Trajectory_er_5.svg" alt="Image 3" class="w-full h-auto">
+  </figure>
+</div>
+
+
+
+<v-drag pos="197,266,70,_">
+<div v-click="1"  class="text-3 text-left">
+$$
+\varepsilon_{r_1} = 1
+$$
+</div>
+</v-drag>
+
+<v-drag pos="491,265,70,_">
+<div v-click="1"  class="text-3 text-left">
+$$
+\varepsilon_{r_1} = 2
+$$
+</div>
+</v-drag>
+
+<v-drag pos="788,262,70,_">
+<div v-click="1"  class="text-3 text-left">
+$$
+\varepsilon_{r_1} = 5
+$$
+</div>
+</v-drag>
+
+
+
+
+
+<div v-click="2" class="grid grid-cols-3 gap-2 mt-10 ml-15">
+  <figure class="text-center">
+    <img src="/figures/DJC_Trajectory_er_2_er2byer1_2.svg" alt="Image 1" class="w-full h-auto">
+  </figure>
+  
+  <figure class="text-center">
+    <img src="/figures/DJC_Trajectory_er_2_er2byer1_2.svg" alt="Image 2" class="w-full h-auto">
+  </figure>
+  
+  <figure class="text-center">
+    <img src="/figures/DJC_Trajectory_er_2_er2byer1_2.svg" alt="Image 3" class="w-full h-auto">
+  </figure>
+</div>
+
+
+
+<v-drag pos="167,481,70,_">
+<div v-click="2"  class="text-3 text-left">
+$$
+\varepsilon_{r_1} = 2, \varepsilon_{r_2} / \varepsilon_{r_1} = 2
+$$
+</div>
+</v-drag>
+
+<v-drag pos="480,484,70,_">
+<div v-click="2"  class="text-3 text-left">
+$$
+\varepsilon_{r_1} = 2, \varepsilon_{r_2} / \varepsilon_{r_1} = 3
+$$
+</div>
+</v-drag>
+
+<v-drag pos="775,483,70,_">
+<div v-click="2"  class="text-3 text-left">
+$$
+\varepsilon_{r_1} = 2, \varepsilon_{r_2} / \varepsilon_{r_1} = 5
+$$
+</div>
+</v-drag>
+
+
+
+
+
 
 <div class="abs-br m-2 text-3">
   <SlideCurrentNo />
@@ -1906,41 +2176,45 @@ class: text-4
 | Publications                                                                                                                                                                                                                                 |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1. Electromagnetic scattering by curved surfaces and calculation of radiation force: Lattice Boltzmann simulations <br> <span class="text-3" ><b>Mohd. Meraj Khan</b>, Sumesh P Thampi and Anubhab Roy <i> J. App. Phys. 136, 19</i> </span> |
-| 2. Scattering of electromagnetic waves using lattice Boltzmann method <br> <span class="text-3" ><b>Mohd. Meraj Khan</b>, Sumesh P Thampi and Anubhab Roy <i> Under preparation for J. Comput. Phys </i> </span>                             |
-| 3. Radiation Force and Torque on a Dielectric Janus Cylinder by Lattice Boltzmann Method <br> <span class="text-3" ><b>Mohd. Meraj Khan</b>, Sumesh P Thampi and Anubhab Roy <i> Under preparation for Phys. Rev. E </i> </span>             |
+| 2. Lattice Boltzmann method for electromagnetic wave scattering <br> <span class="text-3" ><b>Mohd. Meraj Khan</b>, Sumesh P Thampi and Anubhab Roy <i> (Under review) J. Comput. Phys </i> </span>                             |
+| 3. Radiation Forces and Torques on Janus Cylinders <br> <span class="text-3" ><b>Mohd. Meraj Khan</b>, Sumesh P Thampi and Anubhab Roy <i> (Under review) Phys. Rev. E </i> </span>             |
 
 <div h-3 />
 
 | Code                                                                                                                                                           |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1. Developed <a href="https://github.com/mohd-meraj-khan/LBM-for-scattering" target="_blank">in-house code</a> for scattering and radiation force calculations |
+| 1. Developed an open-source in-house code for scattering and radiation force calculations (<a href="https://github.com/mohd-meraj-khan/LBM-for-scattering" target="_blank">https://github.com/mohd-meraj-khan/LBM-for-scattering</a>) |
 
 <div class="abs-br m-2 text-3">
   <SlideCurrentNo />
 </div>
+
+---
+
+## GitHub repository clone activity
+
+
+
+<div class="flex flex-col items-center justify-center my-6">
+  <img src="/figures/GitHub_Clones.png" alt="Scattering pattern" class="h-3/4 rounded-xl shadow-lg" />
+  <p class="text-sm text-gray-500 mt-3 italic">
+    Daily number of unique users who cloned the GitHub repository over the past two weeks.
+  </p>
+</div>
+
+
 
 ---
 layout: center
 class: text-center
 ---
 
-## Thank you!
+# Thank you!
 
+
+
+<!--
 <div class="m-5 text-center">
   <a href="https://github.com/mohd-meraj-khan/LBM-for-scattering" target=_blank>https://github.com/mohd-meraj-khan/LBM-for-scattering</a> 
 </div>
-
----
-class: text-4
----
-## Visible Research Output
-
-| Conferences                                                                                                                                                                                   |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1. Attended “DSFD 2022", conducted online, and presented a talk titled ‘Lattice Boltzmann method for scattering of electromagnetic waves by curved geometries', 22-26 Aug 2022, Suzhou, China |
-| 2. Attended CompFlu 2022", and presented a poster titled ‘Electromagnetic wave scattering by dielectric Janus particles', 19-21 Dec 2022, IIT Kharagpur                                       |
-| 3. Attended ISMC 2023", and presented a poster titled ‘Radiation force and torque on a dielectric Janus particle', 04-08 Sep 2023, Osaka Japan                                                |
-
-<div class="abs-br m-2 text-3">
-  <SlideCurrentNo />
-</div>
+-->
