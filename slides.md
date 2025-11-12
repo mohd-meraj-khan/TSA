@@ -5,7 +5,7 @@ theme: seriph
 # like them? see https://unsplash.com/collections/94734566/slidev
 background: /sundog.jpg
 # some information about your slides (markdown enabled)
-title: Seminar II
+title: Thesis Submission Approval Meeting
 info: |
   ## Slidev Starter Template
   Presentation slides for developers.
