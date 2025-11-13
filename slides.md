@@ -34,7 +34,7 @@ Mohd Meraj Khan
   <b>Co-advisor:</b> Prof. Sumesh P. Thampi
 </div>
 
-<div class="mt-5 py-5" >
+<div class="mt-5 py-5 text-3.5" >
   Thesis Submission Approval Meeting <br>
   November 13, 2025
 </div>
@@ -120,7 +120,7 @@ Scattering of electromagnetic waves in nature
 
 
 
-## Scattering of EM waves in remote sensing
+## Scattering of EM waves in remote sensing applications
 
 
 
@@ -177,7 +177,7 @@ Scattering of electromagnetic waves in nature
 ---
 
 
-## Light Scattering by Ice Crystals
+## Scattering by atmospheric ice crystals
 
 
 <div class="grid grid-cols-2 gap-5 mt-15 justify-center">
@@ -196,7 +196,7 @@ Scattering of electromagnetic waves in nature
       <img src="/figures/Ice_crystals.jpeg" alt="Image 2" class="w-auto h-auto">
     </div>
     <figcaption class="text-3 mt-2">
-      Size of ice crystals
+      Size and shape of ice crystals
       <div class="text-2">(Source: wikipedia.org)</div>
     </figcaption>
   </figure>
@@ -231,18 +231,18 @@ Scattering of electromagnetic waves in nature
       Your browser does not support the video tag.
     </video>
     <figcaption class="text-3 mt-2">
-      Trapping of the fat particle of a Paramecium
+      Demonstration of optical trapping using radiation force
       <div class="text-2"> A Ashkin and J M Dziedzic (1989)</div>
     </figcaption>
   </figure>
   
   <figure v-click="1" class="text-center">
-    <video autoplay loop muted class="w-full h-auto">
+    <video autoplay loop muted class="w-full h-auto mt-5">
       <source src="/figures/rad_force/Particl_Manipulation_Nobel_2018.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
     <figcaption class="text-3 mt-2">
-      Manipulation of a diatom
+      Radiation forces enabling particle manipulation — the foundation for optical tweezers
       <div class="text-2"> A Ashkin and J M Dziedzic (1989)</div>
     </figcaption>
   </figure>
@@ -259,7 +259,7 @@ Scattering of electromagnetic waves in nature
 layout: default
 ---
 
-## Governing Equations and Lattice Boltzmann Method
+## Governing equations and lattice Boltzmann method
 
 <div class="grid grid-cols-2 gap-6 mt-4">
 
@@ -312,7 +312,7 @@ $$
 
 
 <div v-click='4'>
-<p class="text-lg mb-3">Lattice Boltzmann Method</p>
+<p class="text-lg mb-3">Lattice Boltzmann method</p>
 
 
 <div class="relative w-full mt-0">
