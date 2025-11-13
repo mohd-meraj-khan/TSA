@@ -2125,8 +2125,19 @@ class: text-center
 
 
 
+
+<div class="abs-br m-2 mr-5 text-2">
+  <a href="https://drive.google.com/drive/folders/1dyfyaqMJ2c8UjNQFtcUzFdpj91WyvXz2?usp=sharing" target=_blank>Papers and thesis</a> 
+</div>
+
+
+
+
+
+
+
 <!--
 <div class="m-5 text-center">
-  <a href="https://github.com/mohd-meraj-khan/LBM-for-scattering" target=_blank>https://github.com/mohd-meraj-khan/LBM-for-scattering</a> 
+  <a href="https://drive.google.com/drive/folders/1dyfyaqMJ2c8UjNQFtcUzFdpj91WyvXz2?usp=sharing" target=_blank>Papers and thesis</a> 
 </div>
 -->
