@@ -34,7 +34,7 @@ Mohd Meraj Khan
   <b>Co-advisor:</b> Prof. Sumesh P. Thampi
 </div>
 
-<div class="mt-5 py-1" >
+<div class="mt-5 py-5" >
   Thesis Submission Approval Meeting <br>
   November 13, 2025
 </div>
@@ -54,7 +54,7 @@ Mohd Meraj Khan
 
 ---
 
-## Scattering of EM Waves in Climate Studies
+## Scattering of EM waves in climate studies
 
 <!-- <div v-click="1" class="text-center mt-5">
 Scattering of electromagnetic waves in nature
@@ -120,7 +120,7 @@ Scattering of electromagnetic waves in nature
 
 
 
-## Scattering of EM Waves in Remote Sensing
+## Scattering of EM waves in remote sensing
 
 
 
@@ -214,7 +214,7 @@ Scattering of electromagnetic waves in nature
 
 ---
 
-## Radiation Force
+## Particle trapping and manipulation using radiation force
 
 <v-drag  pos="852,15,94,_">
 <figure class="text-center">
@@ -384,7 +384,7 @@ $$
 
 ---
 
-## Solution Methods
+## Methods to solve Maxwell's equations
 
 <table class="w-full border-collapse border text-center text-3.5 mt-5">
   <thead>
@@ -501,7 +501,7 @@ layout: center
 
 ---
 
-## Problem definition
+## Problem setup for LBM Simulation
 
 <div class="flex justify-center w-full mt-1">
   <div class="w-3/4 h-auto text-center">
@@ -580,8 +580,8 @@ $$
   
  
   
-  <figure v-click class="text-center mt-20">
-    <img src="/figures/Fx_PEC1.svg" alt="Image 1" class="w-full h-auto">
+  <figure v-click class="text-center mt-30 ml-10">
+    <img src="/figures/Fx_PEC1.svg" alt="Image 1" class="w-3/4 h-auto">
   </figure>
 
 </div>
@@ -1651,7 +1651,7 @@ $$
 <v-drag pos="763,56,53,_">
 <div v-click="1"  class="text-3 text-left">
 $$
-\langle \vec{T}_z \rangle
+\langle \vec{M}_z \rangle
 $$
 </div>
 </v-drag>
@@ -1716,7 +1716,7 @@ $$
 <v-drag pos="760,71,53,_">
 <div v-click="1"  class="text-3 text-left">
 $$
-\langle \vec{T}_z \rangle
+\langle \vec{M}_z \rangle
 $$
 </div>
 </v-drag>
