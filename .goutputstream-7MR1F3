@@ -1806,64 +1806,12 @@ $$
 
 
 
-<div class="grid grid-cols-[35%_65%] gap-8 items-center justify-center mt-8">
-
-  <!-- Left column: Video -->
-
-
-  <!-- Right column: Equations -->
-<div class="flex flex-col items-center text-center space-y-6">
-
-<p class="text-lg mb-2">Instantaneous Force and Torque Balances</p>
-
-<div  class="text-4">
-$$
-\mathbf{F}^{H} + \mathbf{F}^{EM} = 0, \quad \mathbf{M}^{H} + \mathbf{M}^{EM} = 0
-$$
-
-</div>
-
-
-
-
-
-<p class="text-lg mt-4">Hydrodynamic Resistances</p>
-
-<div  class="text-4">
-$$
-\mathbf{F}^{H} =
--\frac{4\pi \eta L}{\log(L/a)} \, \mathbf{U}
-$$
-
-</div>
-
-<div class="text-4">
-$$
-\mathbf{M}^{H} =
--4\pi \eta a^{2} \mathbf{\Omega}
-$$
-
-</div>
-
-</div>
-
-
-
-
-<div class="flex justify-center items-center mr--25">
 <figure class="text-center">
   <video autoplay loop muted playsinline class="w-full h-auto ">
     <source src="/figures/Janus_Trajectories_fixed_er.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  
 </figure>
-</div>
-
-
-
-</div>
-
   
 
 
@@ -1882,7 +1830,7 @@ $$
 
 
 <v-drag pos="831,4,141,_">
-<figure class="text-center">
+<figure class="text-center pl-25">
   <img src="/figures/Janus_schematic_PEC.svg" alt="Image 2" class="w-full h-auto">
 </figure>
 </v-drag>
