@@ -735,6 +735,37 @@ $$
   </div>
 </div>
 
+
+
+<v-drag v-click="3" v-click.hide="4" pos="180,271,76,_">
+<div class="text-3 text-left">
+$$
+a/\lambda = 0.91
+$$
+</div>
+</v-drag>
+
+
+<v-drag v-click="3" v-click.hide="4" pos="415,268,176,_">
+<div class="text-3 text-left">
+$$
+a/\lambda = 0.93
+$$
+</div>
+</v-drag>
+
+
+<v-drag v-click="3" v-click.hide="4" pos="754,269,112,_">
+<div class="text-3 text-left">
+$$
+a/\lambda = 0.95
+$$
+</div>
+</v-drag>
+
+
+
+
 <div class="abs-br m-2 text-3">
   <SlideCurrentNo />
 </div>
