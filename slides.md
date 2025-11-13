@@ -266,40 +266,40 @@ layout: default
   <!-- Left Column -->
 <div class="pl-0">
 
-<div v-click='1' >
+<div v-click='1' class="text-4" >
 <p class="text-lg mb-3">Maxwell's equations</p>
 
 $$
 \begin{alignedat}{3}
-\nabla \cdot \vec{D} &= \rho 
+\nabla \cdot \mathbf{D} &= \rho 
 &\quad\quad &
-\nabla \times \vec{E} &= -\frac{\partial \vec{B}}{\partial t} \\[1.2em]
-\nabla \cdot \vec{B} &= 0
+\nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t} \\[1.2em]
+\nabla \cdot \mathbf{B} &= 0
 &\quad\quad &
-\nabla \times \vec{H} &= \vec{J} + \frac{\partial \vec{D}}{\partial t}
+\nabla \times \mathbf{H} &= \mathbf{J} + \frac{\partial \mathbf{D}}{\partial t}
 \end{alignedat}
 $$
 </div>
 
-<div v-click='2' >
+<div v-click='2' class="text-4" >
 <p class="mt-4 ">For linear media</p>
 $$
-\vec{D} = \varepsilon \vec{E}, \quad \vec{B} = \mu \vec{H}
+\mathbf{D} = \varepsilon \mathbf{E}, \quad \mathbf{B} = \mu \mathbf{H}
 $$
 </div>
 
-<div v-click='3' >
+<div v-click='3' class="text-4" >
 <p class="mt-4 ">Boundary conditions at the interface of two media</p>
 $$
 \begin{array}{cc}
 \begin{aligned}
-\hat{n} \cdot (\vec{D}_{2} - \vec{D}_{1}) &= \sigma \\[1.2em]
-\hat{n} \times (\vec{E}_{2} - \vec{E}_{1}) &= 0
+\hat{n} \cdot (\mathbf{D}_{2} - \mathbf{D}_{1}) &= \sigma \\[1.2em]
+\hat{n} \times (\mathbf{E}_{2} - \mathbf{E}_{1}) &= 0
 \end{aligned}
 &
 \begin{aligned}
-\hat{n} \cdot (\vec{B}_{2} - \vec{B}_{1}) &= 0 \\[1.2em]
-\hat{n} \times (\vec{H}_{2} - \vec{H}_{1}) &= \vec{K}
+\hat{n} \cdot (\mathbf{B}_{2} - \mathbf{B}_{1}) &= 0 \\[1.2em]
+\hat{n} \times (\mathbf{H}_{2} - \mathbf{H}_{1}) &= \mathbf{K}
 \end{aligned}
 \end{array}
 $$
@@ -317,9 +317,9 @@ $$
 
 <div class="relative w-full mt-0">
 
-<div v-click.hide='5' absolute inset-0 >
+<div v-click.hide='6' absolute inset-0 >
 <div >
-<div class="flex justify-between items-center text-3.5 mt-10">
+<div class="flex justify-between items-center text-3.5 mt-2">
   <div class="text-center mr-15 ml-10">
     Post collision
   </div>
@@ -337,7 +337,7 @@ $$
 </div>
 
 
-<div v-click="5" absolute inset-0  >
+<div v-click="6" absolute inset-0  >
 <figure class="text-center item-center">
   <video autoplay loop muted class="w-full h-auto">
     <source src="/figures/rad_force/lattice_boltzmann.mp4" type="video/mp4">
@@ -353,12 +353,12 @@ $$
 
 
 <div v-click='4' class="abs-br m-2 mr-5 text-2">
-  Timm Kruger (2017)
+  Hauser and Verhey (2017) Timm Kruger (2017)
 </div>
 
 </div>
 
-<v-drag v-click="4" v-click.hide='5' pos="488,388,282,_">
+<v-drag v-click="4" v-click.hide='6' pos="476,337,282,_">
 <div class="text-3 text-left">
 $$
 f_i^* (\vec{x}, t) = f_i (\vec{x}, t) + \frac{\Delta t}{\tau} \left[f_i^{eq} (\vec{x}, t) - f_i (\vec{x}, t) \right]
@@ -366,7 +366,7 @@ $$
 </div>
 </v-drag>
 
-<v-drag  v-click="4" v-click.hide='5' pos="765,432,198,_">
+<v-drag  v-click="4" v-click.hide='6' pos="767,345,198,_">
 <div class="text-3 text-left">
 $$
 f_i (\vec{x} + \vec{c}_i \Delta t, t + \Delta t) = f_i^* (\vec{x}, t)
@@ -374,13 +374,38 @@ $$
 </div>
 </v-drag>
 
+
+
+
+<v-drag  v-click="5" v-click.hide='6' pos="575,398,318,_">
+<div class="text-3 text-left">
+$$
+{\bf e}_i^{eq} ({\bf r} ,t) = 
+    \begin{cases}
+      \frac{1}{6}\Big(\mathbf{E} ({\bf r} ,t) -   {\bf c}_i \times \mathbf{H} ({\bf r} ,t) \Big) & \text{if $i \neq 0$}\\
+      (\varepsilon_{r} - 1 ) \mathbf{E} ({\bf r} ,t) & \text{if $i = 0$}
+    \end{cases},  \\
+    {\bf h}_i^{eq} ({\bf r} ,t) = 
+    \begin{cases}
+      \frac{1}{6}\Big(\mathbf{H} ({\bf r} ,t) +  {\bf c}_i \times \mathbf{E} ({\bf r} ,t) \Big) & \text{if $i \neq 0$}\\
+      (\mu_{r} - 1 ) \mathbf{H} ({\bf r} ,t) & \text{if $i = 0$}
+    \end{cases},  
+$$
+</div>
+</v-drag>
+
+
+
+
+
+
+
+
 <div class="abs-br m-2 text-3">
   <SlideCurrentNo />
 </div>
 
 </div>
-
-
 
 ---
 
